@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form">
+            <div class="logo">
+                <img src="{% static 'image/logo.png' %}" alt="logo">
+
+            </div>
+            <h1>Connexion</h1>
+
+            {% if messages %}
+            <div class="error-messages">
+                {% for message in messages %}
+                <p class="error">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <form method="post" action="{% url 'connexion' %}">
+                {% csrf_token %} <br>
+                <label for="username"  >Nom d'utilisateur</label>
+                <input type="text" name="username" id="username" required>
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="password" required>
+                <button type="submit">Se connecter</button>
+            </form>
+            <p class="link">Pas encore inscrit ? <a href="{% url 'inscription' %}" style="color: #6acf6d;">S'inscrire</a></p>
+        </div>
+    </div>
+
+    <style>
+
+        .logo img {
+            max-width: 150px;
+            height: auto;
+            margin-left: 125px ;
+            }
+
+            body {
+                background-image: url('{% static 'image/R.jpg' %}');
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                margin: 0; /* Ajout pour enlever la marge par défaut */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: Arial, sans-serif; /* Ajout pour une meilleure lisibilité */
+            }
+
+            .container {
+                background-color: rgba(0, 0, 0, 0.7); /* Augmentation de l'opacité */
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+                max-width: 400px; /* Limitation de la largeur pour une meilleure lisibilité */
+                width: 90%; /* Ajustement de la largeur */
+            }
+
+            h1 {
+                color: white;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            label {
+                color: white; /* Couleur du texte pour les labels */
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                width: calc(100% - 22px);
+                padding: 10px;
+                margin-bottom: 10px;
+                border: none;
+                border-radius: 3px;
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+
+            button {
+                background-color: #5fc063;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+
+
+            .link {
+                text-align: center;
+                margin-top: 30px;
+                color: #f5f1f1;
+            }
+
+            .link a {
+                color: #29d9d5;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+    </style>
+</body>
+</html>

@@ -1,0 +1,771 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park me</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="{% url 'acceuil' %}"> <span>Park</span> Me</a>
+            <img src="{% static 'image/logo-removebg-preview.png' %}" alt="logo">
+
+        </div>
+        <ul class="menu">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="{% url 'inscription' %}">à propos</a></li>
+            <li><a href="#popular-destination">Localisation</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="{% url 'inscription' %}" class="btn-auth">S'inscrire</a>
+            <a href="{% url 'connexion' %}" class="btn-auth">Se Connecter</a>
+        </div>
+
+        <div class="responsive-menu"></div>
+    </header>
+    <!-- acceuil section -->
+    <section id="home">
+        <h2>Nous suivre</h2>
+        <h4>Garez en toute sécurité</h4>
+        <p>Découvrez notre solution de stationnement sécurisée et pratique. Nous vous offrons la tranquillité d'esprit en vous assurant une expérience de stationnement sans souci.</p>
+        <p>Explorez nos offres spéciales et réservez dès maintenant pour garantir votre place dans les meilleurs emplacements.</p>
+
+        <a href="{% url 'inscription' %}" class="btn-reservation home-btn">Réserver Maintenant</a>
+
+    </section>
+
+    <!-- A propos section -->
+    <section id="a-propos">
+        <h1 class="title">à propos</h1>
+        <div class="img-desc">
+           <div class="left">
+                <img src="{% static 'image/imgparkme.jpg' %}" alt="Image à propos">
+           </div>
+            <div class="right">
+                <h3>Découvrez Parkme, La solution idéale.</h3>
+                <p>Découvrez Park me, votre partenaire pour un stationnement sans souci à Madagascar. Nous mettons à votre disposition des solutions de stationnement sécurisées et faciles d'accès, vous permettant de profiter pleinement de votre séjour ou de vos déplacements. Réservez dès aujourd'hui et laissez-nous vous simplifier la vie avec notre service client dédié.</p>
+                <a href="#">Lire Plus</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- section destination -->
+    <section id="popular-destination">
+        <h1 class="title">Explorez Quelques Options de Stationnement Préférées</h1>
+        <div class="content">
+            <!-- box -->
+            <div class="box">
+                <img src="{% static 'image/parking_2.jpg' %}" alt="">
+
+                <div class="content">
+                    <div>
+                        <h4>Antananarivo</h4>
+                        <p>Antananarivo, capitale de Madagascar, où trouver un stationnement peut être difficile en raison de sa densité urbaine.</p>
+                        <p>"Park Me" simplifie les déplacements en permettant aux utilisateurs de sécuriser un espace à l'avance. Cela réduit le stress lié à la recherche de stationnement, optimisant ainsi leur expérience urbaine.</p>
+                        <a href="{% url 'tana' %}">Voir les parkings</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+            <!-- box -->
+            <div class="box">
+                <img src="{% static 'image/Antsirabe.jpg' %}" alt="">
+
+                <div class="content">
+                    <div>
+                        <h4>Antsirabe</h4>
+                        <p>Antsirabe, ville majeure de Madagascar, fait face à des défis similaires en matière de stationnement en raison de sa croissance urbaine.</p>
+                        <p>"Park Me" offre une solution pratique en permettant aux utilisateurs de réserver leur espace de stationnement à l'avance, offrant ainsi une expérience urbaine plus fluide et moins stressante.</p>
+                        <a href="{% url 'antsirabe' %}">Voir les parkings</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+            <!-- box -->
+            <div class="box">
+                <img src="{% static 'image/Fianarantsoa.jpg' %}" alt="">
+                <div class="content">
+                    <div>
+                        <h4>Fianarantsoa</h4>
+                        <p>Fianarantsoa, une ville animée de Madagascar, est confrontée à des défis significatifs en matière de stationnement en raison de son développement urbain rapide.</p>
+                        <p>"Park Me" offre une solution pratique en permettant aux résidents et aux visiteurs de sécuriser leur espace de stationnement à l'avance, réduisant ainsi les tracas liés à la recherche de places et améliorant leur expérience en ville.</p>
+                        <a href="{% url 'fianarantsoa' %}">Voir les parkings</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+             <!-- box -->
+             <div class="box">
+                <img src="{% static 'image/Mahajanga.jpg' %}" alt="">                <div class="content">
+                    <div>
+                        <h4>Mahajanga</h4>
+                        <p>Mahajanga, une ville côtière dynamique de Madagascar, fait face à des défis de stationnement en raison de son activité urbaine croissante.</p>
+                        <p>"Park Me" simplifie la vie des résidents et des visiteurs en leur permettant de réserver leur espace de stationnement à l'avance, réduisant ainsi les difficultés liées à la recherche de places disponibles et améliorant leur expérience quotidienne dans la ville.</p>
+                        <a href="{% url 'mahajanga' %}">Voir les parkings</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+             <!-- box -->
+             <div class="box">
+                <img src="{% static 'image/Toamasina.jpg' %}" alt="">
+                <div class="content">
+                    <div>
+                        <h4>Toamasina </h4>
+                        <p>Toamasina, également connue sous le nom de Tamatave, est une ville portuaire majeure de Madagascar, confrontée à des défis importants en matière de stationnement en raison de son activité commerciale et industrielle intense.</p>
+                        <p>"Park Me" offre une solution pratique en permettant aux résidents et aux visiteurs de réserver leur espace de stationnement à l'avance, facilitant ainsi leurs déplacements dans cette ville animée et réduisant le stress lié à la recherche de places disponibles.</p>
+                        <a href="{% url 'toamasina' %}">Voir les parkings</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+             <!-- box -->
+             <div class="box">
+                <img src="{% static 'image/Toliara.jpg' %}" alt="">
+                <div class="content">
+                    <div>
+                        <h4>Toliara</h4>
+                        <p>Toliara, joyau en plein essor sur la côte ouest de Madagascar, fait face à des défis de stationnement en raison de son attractivité croissante et de son développement urbain rapide.</p>
+                        <p>"Park Me", les résidents et les visiteurs peuvent prévoir leur stationnement à l'avance, transformant ainsi leurs déplacements en une expérience fluide et sans stress dans cette ville dynamique en bord de mer.</p>
+                        <a href="{% url 'toliara' %}">Voir les parkings</a>
+                    </div>
+                </div>
+            </div>
+            <!-- box -->
+        </div>
+    </section>
+    <!--  contact section -->
+    <section id="contact">
+        <h1 class="title">Contact</h1>
+        <form action="">
+            <div class="left-right">
+                <div class="left">
+                    <label>Nom Complet</label>
+                    <input type="text">
+                    <label>Objet</label>
+                    <input type="text">
+                    <label>Email</label>
+                    <input type="text">
+                    <label>Message</label>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="right">
+                    <label>Numéro</label>
+                    <input type="text">
+                    <label>Date</label>
+                    <input type="text">
+                    <label>Autres Details</label>
+                    <input type="text">
+                    <label>Adresse</label>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.761138608143!2d47.51327307933307!3d-18.897674936556278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21f080a899aedae7%3A0xb0343fbfbef5a6ea!2sESTI!5e0!3m2!1sfr!2sfr!4v1720397198957!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </div>
+            </div>
+            <button>Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p> Park <span>ME</span> |.</p>
+    </footer>
+
+
+    <script>
+        var toggle_menu = document.querySelector('.responsive-menu');
+        var menu = document.querySelector('.menu');
+        toggle_menu.onclick= function(){
+             toggle_menu.classList.toggle('active');
+             menu.classList.toggle('responsive')
+        }
+    </script>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Raleway', sans-serif;
+        }
+        a {
+            text-decoration: 0;
+        }
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+            scroll-padding-top: 9px;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+        }
+        body {
+            background-color: #111;
+        }
+        section {
+            margin-top: 50px;
+        }
+
+        header {
+            background-color: #222;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            padding: 0 5%;
+
+        }
+        header  .logo a {
+            font-size: 25px;
+            color: #29d9d5;
+
+        }
+        header  .logo a span {
+            color: #fff;
+        }
+        .logo {
+            display: flex; /* Aligne les éléments enfants (texte et image) horizontalement */
+            align-items: center; /* Centrer verticalement les éléments enfants */
+            gap: 10px; /* Ajoute un espace entre l'image et le texte pour une meilleure lisibilité */
+        }
+
+        .logo img {
+            width: 60px; /* Définit une largeur fixe pour l'image */
+            height: auto; /* Garde les proportions de l'image */
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+        .menu li  {
+            margin: 0 15px;
+            list-style-type: none;
+        }
+        .menu li a {
+            position: relative; /* Ajoute une position relative pour les pseudo-éléments */
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none; /* Supprime le soulignement par défaut */
+        }
+
+        .menu li a::before {
+            content: ''; /* Contenu vide pour le pseudo-élément */
+            position: absolute; /* Position absolue par rapport au lien */
+            bottom: -2px; /* Déplace la ligne en dessous du texte */
+            left: 0;
+            width: 100%; /* Largeur égale à celle du lien */
+            height: 2px; /* Épaisseur de la ligne */
+            background-color: #29d9d5; /* Couleur de la ligne */
+            transform: scaleX(0); /* Initialise la largeur de la ligne à zéro */
+            transition: transform 0.3s ease; /* Animation de la largeur */
+        }
+
+        .menu li a:hover::before {
+            transform: scaleX(1); /* Étend la largeur de la ligne à 100% du texte */
+        }
+
+        .btn-reservation {
+            color: #29d9d5;
+            font-size: 14px;
+            border: 2px solid #29d9d5;
+            padding: 5px 20px;
+            transition: 0.5s;
+            font-weight: bolder;
+        }
+        .btn-reservation:hover {
+            background-color: #29d9d5;
+            color: #fff;
+
+        }
+        .btn-auth{
+            color: #29d9d5;
+            font-size: 14px;
+            border: 2px solid #29d9d5;
+            padding: 5px 20px;
+            transition: 0.5s;
+            font-weight: bolder;
+        }
+        .btn-auth:hover {
+            background-color: #29d9d5;
+            color: #fff;
+
+        }
+
+        /* Home acceuil CSS */
+
+        #home {
+            background: linear-gradient(rgba(0,0,0,0.1),#333),url('{% static "image/mada.jpg" %}');
+
+
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+        }
+        #home h2 {
+            font-size: 45px;
+            margin-bottom: 10px;
+            -webkit-text-stroke: #fff 0.02px;
+            color: transparent;
+            text-transform: lowercase;
+        }
+        #home h4 {
+            font-size: 50px;
+            color: #fff;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+        }
+        #home p {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        .home-btn {
+            margin-bottom: 20px;
+        }
+
+        .find_trip {
+            background-color: #222;
+            padding: 20px;
+            width: 70%;
+            position: absolute;
+            bottom: -50px;
+        }
+        .find_trip form {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+        }
+        .find_trip form div , .find_trip form input[type="submit"]{
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+        }
+        .find_trip form label {
+            color: #999;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        .find_trip form input {
+            padding: 5px 20px;
+            background-color: transparent;
+            border: 1px solid #29d9d5;
+            outline: 0;
+            width: 100%;
+            font-size: 13px;
+            color: #fff;
+        }
+        .find_trip form input[type="submit"] {
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            color: #29d9d5;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .find_trip form input[type="submit"]:hover {
+            box-shadow: 0 0 10px #29d9d5;
+        }
+        /*A propos CSS*/
+        /* image */
+        .img-desc {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .img-desc .left {
+            position: relative;
+            margin-left: 10px;
+            height: 250px; /* Ajustez la hauteur selon vos besoins */
+            width: 40%; /* Ajustez la largeur selon vos besoins */
+        }
+
+        .img-desc .left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Assure le remplissage de l'image */
+            box-shadow: 0 0 10px #29d9d5; /* Ajoute une ombre légère */
+        }
+
+        .img-desc .right {
+            width: 57%; /* Ajustez la largeur selon vos besoins */
+        }
+
+        .img-desc .right h3 {
+            color: #fff;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .img-desc .right p {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 36px;
+        }
+
+        .img-desc .right a {
+            border: 1px solid #29d9d5;
+            color: #29d9d5;
+            font-size: 14px;
+            padding: 8px 25px;
+            font-weight: bold;
+        }
+
+        /* image */
+        #a-propos {
+            margin-top: 100px;
+            margin-bottom: 50px;
+            padding: 0 10%;
+            width: 100%;
+        }
+        .title {
+            text-transform: capitalize;
+            margin: 70px 0;
+            font-weight: bold;
+            color: #29d9d5;
+            position: relative;
+            margin-left:15px;
+            font-size: 18px;
+
+        }
+        .title::after {
+            position: absolute;
+            left: -15px;
+            content: "";
+            height: 100%;
+            background-color: #fff;
+            width: 5px;
+        }
+        .img-desc {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .img-desc .left {
+            position: relative;
+            margin-left: 10px;
+            height: 250px;
+            width: 40%;
+        }
+        .img-desc .right {
+            width: 57%;
+        }
+
+        .img-desc .left video {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            box-shadow: 0 0 10px #29d9d5;
+        }
+        .img-desc .left::after {
+            position: absolute;
+            bottom: -10px;
+            right: 10px;
+            content: "";
+            height: 100%;
+            background-color: #29d9d5;
+            width: 100%;
+            z-index: -1;
+        }
+        .img-desc .right h3 {
+            color: #fff;
+            font-size: 25px;
+            margin-bottom: 20px;
+
+        }
+        .img-desc .right p {
+            color: #999;
+            font: 14px;
+            margin-bottom: 36px;
+        }
+        .img-desc .right a {
+            border: 1px solid #29d9d5;
+            color: #29d9d5;
+            font-size: 14px;
+            padding: 8px 25px;
+            font-weight: bold;
+        }
+
+        /*Destination CSS*/
+        #popular-destination {
+            padding: 0 10% ;
+            margin-bottom: 50px;
+        }
+        #popular-destination .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap: 32px;
+        }
+        #popular-destination .content .box {
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            transition: 0.5s;
+        }
+        #popular-destination .content .box img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .box .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: 0.5s;
+        }
+        .box .content  h4 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        .box .content p {
+            padding: 2px;
+            font-size: 12px;
+        }
+        .box .content p:nth-child(3){
+            margin-bottom: 25px;
+        }
+        .box .content a {
+            margin-top: 60px;
+            padding: 10px 60px;
+            border: 2px solid #29d9d5;
+            color: #29d9d5;
+            font-weight: bold;
+        }
+        .box:hover {
+            box-shadow: 0 0 10px #29d9d5;
+        }
+        .box:hover .content {
+            transform: translateX(0);
+        }
+
+        /* Contact CSS */
+        #contact {
+            padding: 0 10%;
+            margin-bottom: 50px;
+            height: 90vh;
+        }
+        #contact form {
+            background-color: #fff;
+            margin:auto;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .left-right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .left-right .left , .left-right .right  {
+            display: flex;
+            flex-direction: column;
+            width: 49%;
+        }
+        #contact form label {
+            font-size: 14px;
+            padding: 10px 0;
+            font-weight: 600
+        }
+        #contact form input {
+            padding: 8px;
+            outline: 0;
+            border: 1px solid #999;
+        }
+
+        textarea {
+            height: 150px;
+            resize: none;
+            outline: 0;
+            width: 100%;
+            padding: 10px;
+        }
+        #contact form input:focus , textarea:focus {
+            border: 1px solid #29d9d5;
+        }
+        iframe {
+            height: 150px;
+            width: 100%;
+        }
+        #contact button {
+            width: fit-content;
+            padding: 8px 40px;
+            background-color: #111;
+            border: 1px solid #111;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        #contact button:hover {
+            letter-spacing: 1px;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #222;
+            padding: 10px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        footer p {
+            color: #fff;
+        }
+        footer p span {
+            color: #29d9d5;
+        }
+        .responsive-menu {
+            display: none;
+        }
+        /*Responsive*/
+        @media (max-width:750px) {
+            header .menu {
+                display: none;
+            }
+            .btn-reservation {
+                display: none;
+            }
+            /*Home responsive*/
+            #home h2 {
+                font-size: 18px;
+                -webkit-text-stroke: 0;
+                color: #fff;
+            }
+            #home h4 {
+                font-size: 28px;
+            }
+            #home p {
+                text-align: center;
+                font-size: 10px;
+            }
+            .find_trip {
+                width: 100%;
+                height: 200px;
+            }
+            .find_trip form {
+                flex-wrap: wrap;
+            }
+            .find_trip form div {
+                margin-top: 10px;
+                flex-direction: column;
+                width: 47%;
+            }
+            .find_trip form input[type="submit"]{
+                width: 47%;
+            }
+            .home-btn {
+                display:block;
+            }
+            /*Responsive A propos*/
+            .img-desc {
+                flex-direction: column;
+                width: 100%;
+            }
+            .img-desc .left , .img-desc .right {
+                width: 100%;
+            }
+            .img-desc .left video {
+                width: 100%;
+            }
+            .img-desc .left::after {
+                background-color: transparent;
+            }
+            .img-desc .left {
+                margin-bottom: 20px;
+            }
+
+            /*Responsive menu*/
+            .responsive-menu {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                cursor: pointer;
+            }
+            .responsive-menu::after {
+                position: absolute;
+                content: "";
+                height: 3px;
+                background-color: #29d9d5;
+                width: 28px;
+                box-shadow: 0 10px 0 #29d9d5;
+                transform: translateY(-10px);
+                transition: 0.5s;
+            }
+            .responsive-menu.active::after {
+                box-shadow: 0 0 0 #29d9d5;
+                transform: rotate(45deg);
+            }
+            .responsive-menu::before {
+                position: absolute;
+                content: "";
+                height: 3px;
+                background-color: #29d9d5;
+                width: 28px;
+                transform: translateY(10px);
+                transition: 0.5s;
+            }
+            .responsive-menu.active::before {
+                transform: rotate(-45deg);
+            }
+            header .menu.responsive {
+                display: flex;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                flex-direction: column;
+                background-color: #222;
+                align-items: unset;
+                animation: animate-menu 1s forwards;
+            }
+            header .menu.responsive li {
+                margin: 20px;
+                width: 100px;
+                padding-left: 20px;
+            }
+
+            @keyframes animate-menu {
+                0% {
+                    transform: translateY(0);
+                }
+                100% {
+                    transform: translateY(100%);
+                }
+            }
+        }
+
+
+    </style>
+
+</body>
+</html>

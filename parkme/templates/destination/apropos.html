@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A propos</title>
+</head>
+<body>
+
+    <!-- header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><span>Park</span> Me</a>
+                <img src="{% static 'image/logo-removebg-preview.png' %}" alt="Image à propos">
+
+            </div>
+            <ul class="menu">
+                <li><a href="{% url 'acceuil' %}">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="{% url 'acceuil' %}">Localisation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="{% url 'inscription' %}" class="btn-auth">S'inscrire</a>
+                <a href="{% url 'connexion' %}" class="btn-auth">Se Connecter</a>
+            </div>
+        </div>
+    </header>
+    <!-- header -->
+
+    <!-- home -->
+    <section id="home">
+        <h4>Vous êtes au bon endroit !</h4>
+        <p>Découvrez Park Me</p>
+        <p>Votre solution idéale pour trouver et réserver des places de stationnement facilement.</p>
+    </section>
+    <!-- home -->
+
+    <!-- A propos section -->
+    <section id="a-propos">
+        <h1 class="title1">À propos de nous</h1>
+
+        <div class="presentation">
+            <div class="img-desc">
+                <div class="left">
+                    <h1>• Présentation de l'application</h1>
+
+                    <img src="{% static 'image/imgparkme.jpg' %}" alt="Image à propos">
+
+                </div>
+                <div class="description">
+                    <p>Park Me est une application conçue pour faciliter la recherche et la réservation de places de stationnement. Elle vise à résoudre les problèmes de stationnement en permettant aux utilisateurs de trouver des places disponibles en fonction de leur localisation, de leur date et de leur heure. La gestion efficace du stationnement est cruciale pour réduire le stress des automobilistes, et Park Me aide à trouver des places de parking rapidement et facilement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fonctionnalites">
+            <div class="img-desc">
+                <div class="left">
+                    <h1>• Fonctionnalités principales</h1>
+                    <img src="{% static 'image/fonctionnalité.jpg' %}" alt="Image à propos">
+
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Réservation de parking en ligne</li>
+                        <li>Affichage des parkings disponibles</li>
+                        <li>Intégration avec Google Maps</li>
+                        <li>Possibilité d'annuler ou de modifier des réservations</li>
+                    </ul>
+                    <p>Ces fonctionnalités permettent aux utilisateurs de réserver des places de parking et de choisir des créneaux horaires spécifiques, leur offrant ainsi flexibilité et confort.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="equipe">
+            <div class="img-desc">
+                <div class="left">
+                    <h1>• Notre Équipe</h1>
+
+                </div>
+                <div class="description">
+                    <p>Notre équipe est composée de professionnels passionnés par la technologie et le service client. Ensemble, nous travaillons pour offrir le meilleur service de stationnement possible. Voici les membres de notre équipe :</p>
+                    <ul>
+                        <li><strong>Tsiory</strong></li>
+                        <li><strong>Deborah</strong></li>
+                        <li><strong>Riana</strong></li>
+                        <li><strong>Mandresy</strong></li>
+                        <li><strong>Juan</strong></li>
+                        <li><strong>Tiako</strong></li>
+                        <li><strong>Francky</strong></li>
+                    </ul>
+                    <p>Chaque membre apporte une expertise unique pour garantir une expérience utilisateur exceptionnelle.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mission">
+            <div class="img-desc">
+                <div class="left">
+                    <h1>• Notre Mission</h1>
+                    <img src="{% static 'image/mission.jpg' %}" alt="Image ">
+
+                </div>
+                <div class="description">
+                    <p>Notre mission est de rendre le stationnement plus accessible et moins stressant pour tous. Nous visons à offrir des solutions innovantes pour répondre aux besoins changeants des automobilistes. À long terme, nous aspirons à étendre notre service à l'échelle mondiale, en améliorant continuellement notre technologie et en répondant aux attentes de nos utilisateurs.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="engagement">
+            <div class="img-desc">
+                <div class="left">
+                    <h1>• Notre Engagement</h1>
+                    <img src="{% static 'image/engagment.jpg' %}" alt="Image ">
+
+
+                </div>
+                <div class="description">
+                    <p>Nous nous engageons à assurer la satisfaction de nos utilisateurs par des services fiables, sécurisés et conviviaux. Nous prenons des mesures rigoureuses pour garantir la sécurité des données et la fiabilité de nos services. Si vous avez des questions ou des préoccupations, nous sommes toujours disponibles pour vous aider.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <div class="img-desc">
+                <div class="left">
+                    <h1>• Contact et Support</h1>
+                    <img src="contact.jpg" alt="Image Contact">
+                    <img src="{% static 'image/contact.jpg' %}" alt="Image ">
+
+                </div>
+                <div class="description">
+                    <p>Pour toute information supplémentaire ou pour toute question, n'hésitez pas à nous contacter :</p>
+                    <ul>
+                        <li>Email : support@parkme.com</li>
+                        <li>Téléphone : +123 456 7890</li>
+                    </ul>
+                    <p>Pour un support rapide, consultez notre FAQ ou contactez notre service client disponible 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- A propos section -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%; /* Pour un meilleur contrôle des tailles de police */
+    scroll-behavior: smooth;
+    scroll-padding-top: 9px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+
+body {
+    background-color: #000000;
+    color: #fff; /* Couleur de texte par défaut */
+}
+
+section {
+    margin-top: 50px;
+}
+
+header {
+    background-color: #222;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    padding: 0 5%;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+header .logo a {
+    font-size: 25px;
+    color: #29d9d5;
+}
+
+header .logo a span {
+    color: #fff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu li {
+    margin: 0 15px;
+    list-style-type: none;
+}
+
+.menu li a {
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+}
+
+.menu li a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #29d9d5;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.menu li a:hover::before {
+    transform: scaleX(1);
+}
+
+.btn-auth {
+    color: #29d9d5;
+    font-size: 14px;
+    border: 2px solid #29d9d5;
+    padding: 5px 20px;
+    transition: 0.5s;
+    font-weight: bolder;
+    margin-left: 12px;
+}
+
+.btn-auth:hover {
+    background-color: #29d9d5;
+    color: #fff;
+}
+
+#home {
+    background: linear-gradient(rgba(172, 117, 117, 0.1), #638ea0), url("mada.jpg");
+    height: calc(100vh - 50px); /* Ajustez la hauteur pour compenser la hauteur du header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding-top: 50px; /* Compense la hauteur du header */
+}
+
+#home h4 {
+    font-size: 50px;
+    color: #fff;
+    margin-top: -100px; /* Ajustez cette valeur pour le faire monter davantage */
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+#home p {
+    font-size: 20px; /* Ajustez la taille de la police selon vos préférences */
+    color: #fff; /* Assurez-vous que le texte soit visible sur le fond */
+    margin-bottom: 20px; /* Ajoutez un peu d'espace en dessous du paragraphe */
+}
+
+#a-propos {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 0 10%;
+    width: 100%;
+}
+
+.title1 {
+    text-transform: capitalize;
+    margin: 70px 0;
+    font-weight: bold;
+    color: #29d9d5;
+    position: relative;
+    margin-left: 15px;
+    font-size: 40px; /* Réduire la taille du titre */
+}
+
+.title1::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    bottom: -10px; /* Ajuster la position de la ligne blanche */
+    width: 100%;
+    height: 5px; /* Hauteur de la ligne blanche */
+    background-color: #fff; /* Couleur de la ligne blanche */
+}
+
+.img-desc {
+    display: flex;
+    flex-direction: column; /* Réorganiser en colonne pour tous les écrans */
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.img-desc .left {
+    width: 100%; /* Assurer que la div gauche prend toute la largeur */
+    margin-bottom: 20px; /* Ajouter un espace sous l'image */
+}
+
+.img-desc img {
+    width: 100%; /* Ajuster la largeur maximale pour les petits écrans */
+    height: auto; /* Assurer que les images conservent leur proportion */
+}
+
+.img-desc .description {
+    width: 100%; /* Assurer que la description prend toute la largeur */
+    padding-left: 0; /* Supprimer le padding gauche */
+    color: #fff;
+}
+
+.img-desc h1 {
+    font-size: 2.4rem;
+    color: #29d9d5;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.img-desc h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* Ajuster la position de la ligne blanche */
+    right: -15px;
+    width: 100%;
+    height: 5px; /* Hauteur de la ligne blanche */
+    background-color: #fff; /* Couleur de la ligne blanche */
+}
+
+.img-desc p {
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Media queries pour la réactivité */
+@media screen and (min-width: 768px) {
+    .img-desc {
+        flex-direction: row; /* Réorganiser en ligne pour les écrans plus larges */
+    }
+
+    .img-desc .left {
+        flex: 1; /* Assurer que la div gauche prend une partie de la largeur */
+        margin-bottom: 0; /* Supprimer l'espace sous l'image */
+    }
+
+    .img-desc .description {
+        flex: 2; /* Assurer que la description prend une partie de la largeur */
+        padding-left: 20px; /* Ajouter un padding gauche */
+    }
+}
+
+    </style>
+</body>
+</html>

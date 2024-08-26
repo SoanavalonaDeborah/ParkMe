@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Réservation de parking</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <!-- Inclure la police Google Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'image/logo-removebg-preview.png' %}" alt="logo">
+                <span>Park Me</span>
+            </a>
+        </div>
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Accueil</a></li>
+            <li><a href="#a-propos">À propos</a></li>
+            <li><a href="#popular-destination">Localisation</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="auth-buttons">
+            <a href="{% url 'acceuil' %}" class="btn-auth">Se deconnecter</a>
+        </div>
+
+        <div class="responsive-menu"></div>
+    </header>
+
+
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Réserver un parking</h2>
+            <div class="messages">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="success">{{ message|safe }}</div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <form method="POST" action="{% url 'create_reservation' %}">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+
+
+                <div class="form-group">
+                    <label for="{{ form.parking_place.id_for_label }}">Emplacement de parking :</label>
+                    {{ form.parking_place }}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.type_de_véhicule.id_for_label }}">Type de véhicule :</label>
+                    <select name="{{ form.type_de_véhicule.name }}" id="{{ form.type_de_véhicule.id_for_label }}">
+                        <option value="voiture" {% if form.type_de_véhicule.value == 'voiture' %}selected{% endif %}>Voiture</option>
+                        <option value="moto" {% if form.type_de_véhicule.value == 'moto' %}selected{% endif %}>Moto</option>
+                        <option value="camion" {% if form.type_de_véhicule.value == 'camion' %}selected{% endif %}>Camion</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.numéro_de_plaque.id_for_label }}">Numéro de plaque d'immatriculation :</label>
+                    {{ form.numéro_de_plaque }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.date_d_arriver.id_for_label }}">Date de début :</label>
+                    {{ form.date_d_arriver }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.date_de_départ.id_for_label }}">Date de fin :</label>
+                    {{ form.date_de_départ }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.heure_d_arriver.id_for_label }}">Heure d'arrivée :</label>
+                    {{ form.heure_d_arriver }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.heure_de_départ.id_for_label }}">Heure de départ :</label>
+                    {{ form.heure_de_départ }}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">Adresse mail:</label>
+                    {{ form.email }}
+                </div>
+
+
+                
+                <button type="submit" class="btn-auth">Réserver</button>
+            </form>
+        </div>
+       
+        
+        <div class="image-container">
+            <img src="{% static 'image/Designer.jpeg' %}" alt="Illustration">
+        </div>
+        
+    </div>
+     <a href="{% url 'view_reservations' %}" class="btn-cancel">Voir mes reservation</a>
+
+</body>
+</html>
+
+
+
+    <style>
+
+
+
+
+        /* styles.css */
+
+/* Reset des marges et des paddings par défaut */
+
+.messages {
+    margin-bottom: 20px;
+}
+
+.success {
+    background-color: #45a049; /* Vert foncé */
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error {
+    background-color: #f44336; /* Rouge */
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn-auth{
+    color: #29d9d5;
+    font-size: 14px;
+    border: 2px solid #29d9d5;
+    padding: 5px 20px;
+    transition: 0.5s;
+    font-weight: bolder;
+}
+.btn-auth:hover {
+    background-color: #29d9d5;
+    color: #fff;
+ 
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Utilisation de Roboto comme police de caractère */
+    background-color: #333; /* Couleur de fond gris foncé */
+    color: #fff; /* Couleur de texte blanche */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Ajuste l'alignement vertical */
+    min-height: 100vh;
+}
+
+/* Le reste de votre CSS reste inchangé */
+
+        
+        header {
+            background-color: #222;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            padding: 0 5%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        .logo img {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            font-size: 20px;
+        }
+        
+        .menu {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+        }
+        
+        .menu li {
+            margin: 0 15px;
+        }
+        
+        .menu li a {
+            position: relative;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .menu li a::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #29d9d5;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu li a:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 80px; /* Espacement du haut */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Ombre légère */
+            max-width: 900px;
+            width: 90%;
+            box-shadow: 0 0 10px #29d9d5;
+
+        }
+        
+        .form-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+        
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            margin-bottom: 5px;
+        }
+        
+        select,
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #444; /* Couleur de fond pour les champs */
+            color: #fff;
+            outline: none;
+        }
+        
+        button {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        
+    </style>
+</body>
+</html>

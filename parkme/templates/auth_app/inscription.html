@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+</head>
+<body>
+    <div class="container">
+                <form method="post" action="{% url 'inscription' %}">
+                    {% csrf_token %}
+                    <h1>Inscription</h1>
+                    {{ form.as_p }}
+                    <button type="submit">S'inscrire</button>
+                </form>
+                <p class="link" style="color: #ffffff;">Déjà inscrit ? <a href="{% url 'connexion' %}">Se connecter</a></p>
+    </div>
+    <style>
+        /* CSS */
+        /* Import Google font - Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        /* Couleurs */
+            :root {
+                --primary-background: #666;
+                --accent: #29d9d5;
+                --hover-accent: #22c3c0;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+                background-image: url('{% static 'image/bg2.png' %}');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                font-family: 'Inter', sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+
+            .container {
+
+                background-color: rgba(0, 0, 0, 0.7); /* Augmentation de l'opacité */
+                padding: 50px;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+                max-width: 400px; /* Limitation de la largeur pour une meilleure lisibilité */
+                width: 90%; /* Ajustement de la largeur */
+            }
+
+            h1 {
+                color: #ffffff;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 10px;
+                color: #ffffff;
+            }
+
+            /* form inputs */
+            input[type="text"], input[type="email"], input[type="password"] {
+                width: 100%;
+                padding: 12px;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                border-color: #999;
+                transition: border-color 0.3s ease;
+            }
+
+            input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+                border-color: var(--accent);
+            }
+
+            button {
+                background-color: #5fc063;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #45a049;
+            }
+
+            .link {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .link a {
+                color: #6acf6d;
+                text-decoration: none;
+            }
+
+    </style>
+</body>
+</html>
